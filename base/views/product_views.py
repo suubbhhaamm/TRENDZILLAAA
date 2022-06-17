@@ -305,104 +305,17 @@ def getRecommendedProducts(request):
     serializer = ProductSerializer(products, many=True)
     return Response({'products': serializer.data, 'page': page, 'pages': paginator.num_pages})
 
-
-
 @api_view(['GET'])
 def getProducts(request):
-    
     query = request.query_params.get('keyword')
     if query == None:
         query = ''
-    
 
     products = Product.objects.filter(
-        name__icontains = '').order_by('-createdAt') 
-    
-    user = request.user
-    print('hi', user)
-
-    products = list()
-
-    if query != '':
-        products = Product.objects.filter(
         name__icontains=query).order_by('-createdAt')
-
-        print(query)
-        l2 = query.split(" ")
-        global l
-        print(l)
-        l = l + l2
-        l.reverse()
-        print(l)
-        
-
-    else:
-        print(request.user)
-        products = Product.objects.filter(
-        name__icontains = '').order_by('-createdAt') 
-        user = request.user
-        category = get_favoriteProductsByReviews(user)
-
-        print(category)
-  
-    #     # # if len(category) == 1:
-    #     # #     product1 = list(Product.objects.filter(
-    #     # #     category__icontains = category[0]).order_by('-createdAt'))
-
-    #     # #     remaing_products = list(Product.objects.filter(
-    #     # #     name__icontains = ''))
-
-    #     # #     for product in product1:
-    #     # #         remaing_products.remove(product)
-
-    #     # #     products  = product1 + remaing_products
-
-    #     # if len(category) == 2:
-    #     #     product1 = list(Product.objects.filter(
-    #     #     category__icontains = category[0]).order_by('-createdAt'))  
-    #     #     product2 = list(Product.objects.filter(
-    #     #     category__icontains = category[1]).order_by('-createdAt'))
-
-    #     #     remaing_products = list(Product.objects.filter(
-    #     #     name__icontains = ''))
-
-    #     #     for product in product1:
-    #     #         remaing_products.remove(product)
-            
-    #     #     for product in product2:
-    #     #         remaing_products.remove(product)
-
-    #     #     products  = product1 + product2 + remaing_products
-
-
-    #     if len(category) == 3:
-    #         product1 = list(Product.objects.filter(
-    #         category__icontains = category[0]).order_by('-createdAt'))
-    #         product2 = list(Product.objects.filter(
-    #         category__icontains = category[1]).order_by('-createdAt'))
-    #         product3 = list(Product.objects.filter(
-    #         category__icontains = category[2]).order_by('-createdAt'))
-
-
-    #         remaing_products = list(Product.objects.filter(
-    #         name__icontains = ''))
-
-    #         for product in product1:
-    #             remaing_products.remove(product)
-
-    #         for product in product2:
-    #             remaing_products.remove(product)
-                
-    #         for product in product3:
-    #             remaing_products.remove(product)
-            
-
-    #         products  = product1 + product2 + product3 + remaing_products
-
 
     page = request.query_params.get('page')
     paginator = Paginator(products, 8)
-
 
     try:
         products = paginator.page(page)
@@ -418,6 +331,118 @@ def getProducts(request):
     print('Page:', page)
     serializer = ProductSerializer(products, many=True)
     return Response({'products': serializer.data, 'page': page, 'pages': paginator.num_pages})
+
+# @api_view(['GET'])
+# def getProducts(request):
+    
+#     query = request.query_params.get('keyword')
+#     if query == None:
+#         query = ''
+    
+
+#     products = Product.objects.filter(
+#         name__icontains = '').order_by('-createdAt') 
+    
+#     user = request.user
+#     print('hi', user)
+
+#     products = list()
+
+#     if query != '':
+#         products = Product.objects.filter(
+#         name__icontains=query).order_by('-createdAt')
+
+#         print(query)
+#         l2 = query.split(" ")
+#         global l
+#         print(l)
+#         l = l + l2
+#         l.reverse()
+#         print(l)
+        
+
+#     else:
+#         print(request.user)
+#         products = Product.objects.filter(
+#         name__icontains = '').order_by('-createdAt') 
+#         user = request.user
+#         category = get_favoriteProductsByReviews(user)
+
+#         print(category)
+  
+#     #     # # if len(category) == 1:
+#     #     # #     product1 = list(Product.objects.filter(
+#     #     # #     category__icontains = category[0]).order_by('-createdAt'))
+
+#     #     # #     remaing_products = list(Product.objects.filter(
+#     #     # #     name__icontains = ''))
+
+#     #     # #     for product in product1:
+#     #     # #         remaing_products.remove(product)
+
+#     #     # #     products  = product1 + remaing_products
+
+#     #     # if len(category) == 2:
+#     #     #     product1 = list(Product.objects.filter(
+#     #     #     category__icontains = category[0]).order_by('-createdAt'))  
+#     #     #     product2 = list(Product.objects.filter(
+#     #     #     category__icontains = category[1]).order_by('-createdAt'))
+
+#     #     #     remaing_products = list(Product.objects.filter(
+#     #     #     name__icontains = ''))
+
+#     #     #     for product in product1:
+#     #     #         remaing_products.remove(product)
+            
+#     #     #     for product in product2:
+#     #     #         remaing_products.remove(product)
+
+#     #     #     products  = product1 + product2 + remaing_products
+
+
+#     #     if len(category) == 3:
+#     #         product1 = list(Product.objects.filter(
+#     #         category__icontains = category[0]).order_by('-createdAt'))
+#     #         product2 = list(Product.objects.filter(
+#     #         category__icontains = category[1]).order_by('-createdAt'))
+#     #         product3 = list(Product.objects.filter(
+#     #         category__icontains = category[2]).order_by('-createdAt'))
+
+
+#     #         remaing_products = list(Product.objects.filter(
+#     #         name__icontains = ''))
+
+#     #         for product in product1:
+#     #             remaing_products.remove(product)
+
+#     #         for product in product2:
+#     #             remaing_products.remove(product)
+                
+#     #         for product in product3:
+#     #             remaing_products.remove(product)
+            
+
+#     #         products  = product1 + product2 + product3 + remaing_products
+
+
+#     page = request.query_params.get('page')
+#     paginator = Paginator(products, 8)
+
+
+#     try:
+#         products = paginator.page(page)
+#     except PageNotAnInteger:
+#         products = paginator.page(1)
+#     except EmptyPage:
+#         products = paginator.page(paginator.num_pages)
+
+#     if page == None:
+#         page = 1
+
+#     page = int(page)
+#     print('Page:', page)
+#     serializer = ProductSerializer(products, many=True)
+#     return Response({'products': serializer.data, 'page': page, 'pages': paginator.num_pages})
 
 
 @api_view(['GET'])
