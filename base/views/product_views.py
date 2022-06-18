@@ -14,8 +14,8 @@ from rest_framework import status
 @api_view(['GET'])
 def getProducts(request):
     query = request.query_params.get('keyword')
-    if query == 0:
-        query = 0
+    if query == None:
+        query = ''
 
     products = Product.objects.filter(
         name__icontains=query).order_by('-createdAt')
@@ -30,7 +30,7 @@ def getProducts(request):
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
 
-    if page == 0:
+    if page == None:
         page = 1
 
     page = int(page)
