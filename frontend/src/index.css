@@ -21,6 +21,10 @@ h3{
   background-color: #2a3163; 
 }
 
+.usualTextColor{
+  color: "white";
+}
+
 .cartStyle{
   color: "black";
 }
@@ -46,7 +50,8 @@ color: #fff;
 
 .carousel img {
 display:block;
-height: 300px;
+height: 350px;
+width: 350px;
 padding: 30px;
 margin: 40px;
 border-radius: 50%;

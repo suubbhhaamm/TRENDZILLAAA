@@ -20,23 +20,24 @@ function Header() {
     return (
         <header>
           <Navbar className="headerBackColor" expand="lg" collapseOnSelect>
-              <Container>
+              <Container >
                 <LinkContainer to='/'>
                   <Navbar.Brand> <img src="https://fontmeme.com/permalink/220616/076bcd7729ec701ca58d3dff92010842.png" alt="Trendzilla" style={{height:"40px"}}/> </Navbar.Brand>
                 </LinkContainer>
                 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Collapse id="basic-navbar-nav" >
                   <SearchBox/>
-                  <Nav className="ml-auto">
+                  <Nav className="ml-auto" >
                     
                     <LinkContainer to='/cart' style={{color: "white"}}>
                       <Nav.Link><i className="fas fa-shopping-cart" style={{color: "white"}}></i>Cart </Nav.Link>
                     </LinkContainer>
 
-
+                    
                     {userInfo ? (
-                      <NavDropdown title={userInfo.name} id='username' style={{color: "white"}}>
+                      
+                      <NavDropdown title={<span style={{color:"white"}}> {userInfo.name} </span>}  id='username' className='usualTextColor' >
                         <LinkContainer to='/profile' >
                           <NavDropdown.Item>Profile</NavDropdown.Item>
                         </LinkContainer>
@@ -45,14 +46,16 @@ function Header() {
 
                         </NavDropdown>
                     ) : (
-                          <LinkContainer to='/login' style={{color: "white"}}>
-                            <Nav.Link> <i className="fas fa-user" style={{color: "white"}}></i>Login</Nav.Link>
+                          <LinkContainer to='/login' style={{color: "white"}} >
+                            <Nav.Link> <i className="fas fa-user"></i>Login</Nav.Link>
                           </LinkContainer>
                     )}
+                    
+                    
 
 
                     {userInfo && userInfo.isAdmin && (
-                        <NavDropdown title='Admin' id='adminmenue' style={{color: "white"}}>
+                        <NavDropdown title={<span style={{color:"white"}}> Admin </span>} id='adminmenue'  >
                             <LinkContainer to='/admin/userlist'>
                                 <NavDropdown.Item>Users</NavDropdown.Item>
                             </LinkContainer>

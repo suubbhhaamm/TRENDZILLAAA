@@ -82,7 +82,7 @@ function ProductScreen() {
                                         </ListGroup.Item>
 
                                         <ListGroup.Item>
-                                            Price: ${product.price}
+                                            Price: ₹{product.price}
                                         </ListGroup.Item>
 
                                         <ListGroup.Item>
@@ -99,7 +99,7 @@ function ProductScreen() {
                                                 <Row>
                                                     <Col>Price:</Col>
                                                     <Col>
-                                                        <strong>${product.price}</strong>
+                                                        <strong>₹{product.price}</strong>
                                                     </Col>
                                                 </Row>
                                             </ListGroup.Item>
@@ -136,6 +136,27 @@ function ProductScreen() {
                                                     </Row>
                                                 </ListGroup.Item>
                                             )}
+                                            <ListGroup.Item>
+                                                <Row>
+                                                    <Col>Size</Col>
+                                                    <Col xs='auto' className='my-1'>
+                                                            <Form.Control
+                                                                as="select"
+                                                            >
+                                                             <option key="S" value="S">S
+                                                                </option>  
+                                                                <option key="M" value="M">M
+                                                                </option> 
+                                                                <option key="L" value="L">L
+                                                                </option> 
+                                                                <option key="XL" value="XL">XL
+                                                                </option> 
+                                                                <option key="XXL" value="XXL">XXL
+                                                                </option> 
+                                                            </Form.Control>
+                                                            </Col>
+                                                </Row>
+                                            </ListGroup.Item>
 
 
                                             <ListGroup.Item>
