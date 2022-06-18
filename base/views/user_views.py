@@ -10,13 +10,10 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.contrib.auth.hashers import make_password
 from rest_framework import status
-import base.views.product_views as products
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
-
-        products.switch_User()
         data = super().validate(attrs)
 
         serializer = UserSerializerWithToken(self.user).data

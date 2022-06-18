@@ -8,7 +8,8 @@ import Message from '../components/Message'
 import Paginate from '../components/Paginate'
 import ProductCarousel from '../components/ProductCarousel'
 // import RecommendProduct from '../components/RecommendProduct'
-import { listProducts, listMenProducts } from '../actions/productActions'
+//import { listProducts, listMenProducts } from '../actions/productActions'
+import { listProducts } from '../actions/productActions'
 
 
 
