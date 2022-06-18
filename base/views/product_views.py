@@ -15,7 +15,7 @@ from rest_framework import status
 def getProducts(request):
     query = request.query_params.get('keyword')
     if query == 0:
-        query = ''
+        query = 0
 
     products = Product.objects.filter(
         name__icontains=query).order_by('-createdAt')
