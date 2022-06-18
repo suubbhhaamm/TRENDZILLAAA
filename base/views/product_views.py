@@ -10,6 +10,7 @@ from base.serializers import ProductSerializer
 
 from rest_framework import status
 
+
 @api_view(['GET'])
 def getProducts(request):
     query = request.query_params.get('keyword')
@@ -95,7 +96,7 @@ def updateProduct(request, pk):
 def deleteProduct(request, pk):
     product = Product.objects.get(_id=pk)
     product.delete()
-    return Response('Producted Deleted Successfully!')
+    return Response('Producted Deleted')
 
 
 @api_view(['POST'])
@@ -109,7 +110,6 @@ def uploadImage(request):
     product.save()
 
     return Response('Image was uploaded')
-
 
 
 @api_view(['POST'])
