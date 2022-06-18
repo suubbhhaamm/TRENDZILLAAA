@@ -200,5 +200,5 @@ AWS_STORAGE_BUCKET_NAME = 'trendzilla-bucket'
 print ( os.environ.get('AWS_ACCESS_KEY_ID'))
 print (os.environ.get('AWS_SECRET_ACCESS_KEY'))
 
-if os.getcwd() == '/app':
-    DEBUG = False 
+# if os.getcwd() == '/app':
+#     DEBUG = False 
