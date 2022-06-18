@@ -89,7 +89,7 @@ def get_favoriteProductsByReviews(user):
             print("PostgreSQL connection is closed \n")
 
 
-@api_view(['GET'])
+""" @api_view(['GET'])
 def getMensProducts(request):
     products = Product.objects.filter(
     description__icontains='Bluetooth').order_by('-createdAt') | Product.objects.filter(
@@ -304,6 +304,9 @@ def getRecommendedProducts(request):
     print('Page:', page)
     serializer = ProductSerializer(products, many=True)
     return Response({'products': serializer.data, 'page': page, 'pages': paginator.num_pages})
+ """
+
+
 
 @api_view(['GET'])
 def getProducts(request):
@@ -520,7 +523,7 @@ def uploadImage(request):
 
 
 
-@api_view(['POST'])
+""" @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def createProductReview(request, pk):
     user = request.user
@@ -560,6 +563,50 @@ def createProductReview(request, pk):
         product.save()
 
         return Response('Review Added')
+ """
+
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def createProductReview(request, pk):
+    user = request.user
+    product = Product.objects.get(_id=pk)
+    data = request.data
+
+    # 1 - Review already exists
+    alreadyExists = product.review_set.filter(user=user).exists()
+    if alreadyExists:
+        content = {'detail': 'Product already reviewed'}
+        return Response(content, status=status.HTTP_400_BAD_REQUEST)
+
+    # 2 - No Rating or 0
+    elif data['rating'] == 0:
+        content = {'detail': 'Please select a rating'}
+        return Response(content, status=status.HTTP_400_BAD_REQUEST)
+
+    # 3 - Create review
+    else:
+        review = Review.objects.create(
+            user=user,
+            product=product,
+            name=user.first_name,
+            rating=data['rating'],
+            comment=data['comment'],
+        )
+
+        reviews = product.review_set.all()
+        product.numReviews = len(reviews)
+
+        total = 0
+        for i in reviews:
+            total += i.rating
+
+        product.rating = total / len(reviews)
+        product.save()
+
+        return Response('Review Added')
+
 
 
 
