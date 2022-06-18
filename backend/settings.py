@@ -133,13 +133,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'proshop',
-        'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASS') ,
+        'USER': 'subhu11',
+        'PASSWORD': os.environ.get('DB_PASS'),
         'HOST':'localhost',
         'PORT':'5432' 
     }
 }
-print (os.environ.get('DB_PASS'))
 
 
 # Password validation
@@ -197,8 +196,6 @@ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'trendzilla-bucket'
 
-print ( os.environ.get('AWS_ACCESS_KEY_ID'))
-print (os.environ.get('AWS_SECRET_ACCESS_KEY'))
 
 # if os.getcwd() == '/app':
 #     DEBUG = False 
