@@ -8,6 +8,11 @@ function Footer() {
           <Container >
             <Row>
               <Col className="text-center py-3" style={{color: "white"}}>Copyright &copy; Trendzilla</Col>
+              
+            </Row>
+            <Row>
+              <Col className="text-center py-3" style={{color: "white",bottom: "25px"}}>Help and Support - trendzilla@support.co.in</Col>
+              
             </Row>
           </Container>
         </footer>
