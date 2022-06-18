@@ -58,7 +58,7 @@ function ProductScreen() {
 
     return (
         <div>
-            <Link to='/' className='btn btn-light my-3'>Go Back</Link>
+            <Link to='/' className='btn btn-light my-3'style={{background: "none",fontSize: "large",color: "#640505",fontStyle: "italic"}}>Go Back</Link>
             {loading ?
                 <Loader />
                 : error
@@ -67,12 +67,12 @@ function ProductScreen() {
                         <div>
                             <Row>
                                 <Col md={6}>
-                                    <Image src={product.image} alt={product.name} fluid />
+                                    <Image src={product.image} alt={product.name} fluid style={{height:"500px",boxShadow:" 0.2rem 0.2rem 0.2rem 0.2rem"}} />
                                 </Col>
 
 
                                 <Col md={3}>
-                                    <ListGroup variant="flush">
+                                    <ListGroup variant="flush" style={{height:"500px"}}>
                                         <ListGroup.Item>
                                             <h3>{product.name}</h3>
                                         </ListGroup.Item>
@@ -94,7 +94,7 @@ function ProductScreen() {
 
                                 <Col md={3}>
                                     <Card>
-                                        <ListGroup variant='flush'>
+                                        <ListGroup variant='flush' style={{height:"500px"}}>
                                             <ListGroup.Item>
                                                 <Row>
                                                     <Col>Price:</Col>
@@ -143,7 +143,7 @@ function ProductScreen() {
                                                     onClick={addToCartHandler}
                                                     className='btn-block'
                                                     disabled={product.countInStock == 0}
-                                                    type='button'>
+                                                    type='button' style={{marginTop:"100px"}}>
                                                     Add to Cart
                                                 </Button>
                                             </ListGroup.Item>
@@ -154,10 +154,10 @@ function ProductScreen() {
 
                             <Row>
                                 <Col md={6}>
-                                    <h4>Reviews</h4>
+                                    <h4 style={{paddingTop:"100px",fontFamily: "cursive",paddingBottom:"10px"}}>Reviews</h4>
                                     {product.reviews.length === 0 && <Message variant='info'>No Reviews</Message>}
 
-                                    <ListGroup variant='flush'>
+                                    <ListGroup variant='flush' style={{boxShadow: "0.2rem 0.2rem 0.2rem 0.2rem"}}>
                                         {product.reviews.map((review) => (
                                             <ListGroup.Item key={review._id}>
                                                 <strong>{review.name}</strong>
@@ -206,6 +206,12 @@ function ProductScreen() {
                                                         disabled={loadingProductReview}
                                                         type='submit'
                                                         variant='primary'
+                                                        style={{    background: "black",
+                                                            color: "brown",
+                                                            fontSize:" x-large",
+                                                            fonttyle: "italic",
+                                                            fontFamily: "cursive",
+                                                            marginTop: "12px"}}
                                                     >
                                                         Submit
                                                     </Button>

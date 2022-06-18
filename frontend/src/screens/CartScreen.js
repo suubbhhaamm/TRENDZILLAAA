@@ -44,7 +44,7 @@ function CartScreen() {
                         Your cart is empty <Link to='/' style={{color: "#950303", fontStyle: 'italic'}}>Go Back</Link>
                     </Message>
                 ) : (
-                        <ListGroup variant='flush'>
+                        <ListGroup variant='flush' style={{paddingTop:"18px"}}>
                             {cartItems.map(item => (
                                 <ListGroup.Item key={item.product}>
                                     <Row>
