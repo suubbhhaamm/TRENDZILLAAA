@@ -33,7 +33,7 @@ function PaymentScreen({ history }) {
 
             <Form onSubmit={submitHandler}>
                 <Form.Group>
-                    <Form.Label as='legend'>Select Method</Form.Label>
+                    <Form.Label as='legend' style={{color: "black",fontFamily: "cursive"}}>Select Method</Form.Label>
                     <Col>
                         <Form.Check
                             type='radio'
@@ -41,6 +41,7 @@ function PaymentScreen({ history }) {
                             id='paypal'
                             name='paymentMethod'
                             checked
+                            style={{color: "#250166"}}
                             onChange={(e) => setPaymentMethod(e.target.value)}
                         >
 

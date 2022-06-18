@@ -51,7 +51,7 @@ function UserEditScreen() {
 
     return (
         <div>
-            <Link to='/admin/userlist'>
+            <Link to='/admin/userlist' style={{fontSize: "large",color: "#640505",fontStyle: "italic"}}>
                 Go Back
             </Link>
 
@@ -65,7 +65,7 @@ function UserEditScreen() {
                         <Form onSubmit={submitHandler}>
 
                             <Form.Group controlId='name'>
-                                <Form.Label>Name</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Name</Form.Label>
                                 <Form.Control
 
                                     type='name'
@@ -77,7 +77,7 @@ function UserEditScreen() {
                             </Form.Group>
 
                             <Form.Group controlId='email'>
-                                <Form.Label>Email Address</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Email Address</Form.Label>
                                 <Form.Control
                                     type='email'
                                     placeholder='Enter Email'
@@ -92,6 +92,7 @@ function UserEditScreen() {
                                     type='checkbox'
                                     label='Is Admin'
                                     checked={isAdmin}
+                                    style={{color: "#250166",fontFamily: "cursive"}}
                                     onChange={(e) => setIsAdmin(e.target.checked)}
                                 >
                                 </Form.Check>

@@ -33,7 +33,7 @@ function ShippingScreen() {
             <Form onSubmit={submitHandler}>
 
                 <Form.Group controlId='address'>
-                    <Form.Label>Address</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Address</Form.Label>
                     <Form.Control
                         required
                         type='text'
@@ -45,7 +45,7 @@ function ShippingScreen() {
                 </Form.Group>
 
                 <Form.Group controlId='city'>
-                    <Form.Label>City</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>City</Form.Label>
                     <Form.Control
                         required
                         type='text'
@@ -57,7 +57,7 @@ function ShippingScreen() {
                 </Form.Group>
 
                 <Form.Group controlId='postalCode'>
-                    <Form.Label>Postal Code</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Postal Code</Form.Label>
                     <Form.Control
                         required
                         type='text'
@@ -69,7 +69,7 @@ function ShippingScreen() {
                 </Form.Group>
 
                 <Form.Group controlId='country'>
-                    <Form.Label>Country</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Country</Form.Label>
                     <Form.Control
                         required
                         type='text'

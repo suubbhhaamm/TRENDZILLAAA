@@ -76,7 +76,7 @@ function ProfileScreen() {
                 <Form onSubmit={submitHandler}>
 
                     <Form.Group controlId='name'>
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Name</Form.Label>
                         <Form.Control
                             required
                             type='name'
@@ -88,7 +88,7 @@ function ProfileScreen() {
                     </Form.Group>
 
                     <Form.Group controlId='email'>
-                        <Form.Label>Email Address</Form.Label>
+                        <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Email Address</Form.Label>
                         <Form.Control
                             required
                             type='email'
@@ -100,7 +100,7 @@ function ProfileScreen() {
                     </Form.Group>
 
                     <Form.Group controlId='password'>
-                        <Form.Label>New Password</Form.Label>
+                        <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>New Password</Form.Label>
                         <Form.Control
 
                             type='password'
@@ -112,7 +112,7 @@ function ProfileScreen() {
                     </Form.Group>
 
                     <Form.Group controlId='passwordConfirm'>
-                        <Form.Label>Confirm New Password</Form.Label>
+                        <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Confirm New Password</Form.Label>
                         <Form.Control
 
                             type='password'
@@ -140,7 +140,7 @@ function ProfileScreen() {
                 ) : errorOrders ? (
                     <Message variant='danger'>{errorOrders}</Message>
                 ) : (
-                            <Table striped responsive className='table-sm'>
+                            <Table striped responsive className='table-sm' style={{color:"#560c0c"}}>
                                 <thead>
                                     <tr>
                                         <th>ID</th>

@@ -101,7 +101,7 @@ function ProductEditScreen() {
 
     return (
         <div>
-            <Link to='/admin/productlist'>
+            <Link to='/admin/productlist'style={{fontSize: "large",color: "#640505",fontStyle: "italic"}}>
                 Go Back
             </Link>
 
@@ -115,7 +115,7 @@ function ProductEditScreen() {
                         <Form onSubmit={submitHandler}>
 
                             <Form.Group controlId='name'>
-                                <Form.Label>Name</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Name</Form.Label>
                                 <Form.Control
 
                                     type='name'
@@ -127,7 +127,7 @@ function ProductEditScreen() {
                             </Form.Group>
 
                             <Form.Group controlId='price'>
-                                <Form.Label>Price</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Price</Form.Label>
                                 <Form.Control
 
                                     type='number'
@@ -140,7 +140,7 @@ function ProductEditScreen() {
 
 
                             <Form.Group controlId='image'>
-                                <Form.Label>Image</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Image</Form.Label>
                                 <Form.Control
 
                                     type='text'
@@ -165,7 +165,7 @@ function ProductEditScreen() {
 
 
                             <Form.Group controlId='brand'>
-                                <Form.Label>Brand</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Brand</Form.Label>
                                 <Form.Control
 
                                     type='text'
@@ -177,7 +177,7 @@ function ProductEditScreen() {
                             </Form.Group>
 
                             <Form.Group controlId='countinstock'>
-                                <Form.Label>Stock</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Stock</Form.Label>
                                 <Form.Control
 
                                     type='number'
@@ -189,7 +189,7 @@ function ProductEditScreen() {
                             </Form.Group>
 
                             <Form.Group controlId='category'>
-                                <Form.Label>Category</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Category</Form.Label>
                                 <Form.Control
 
                                     type='text'
@@ -201,7 +201,7 @@ function ProductEditScreen() {
                             </Form.Group>
 
                             <Form.Group controlId='description'>
-                                <Form.Label>Description</Form.Label>
+                                <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Description</Form.Label>
                                 <Form.Control
 
                                     type='text'
@@ -213,7 +213,7 @@ function ProductEditScreen() {
                             </Form.Group>
 
 
-                            <Button type='submit' variant='primary'>
+                            <Button type='submit' variant='primary' style={{marginTop:"10px"}}>
                                 Update
                         </Button>
 

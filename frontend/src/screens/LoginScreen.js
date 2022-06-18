@@ -43,7 +43,7 @@ function LoginScreen({ history }) {
             <Form onSubmit={submitHandler}>
 
                 <Form.Group controlId='email'>
-                    <Form.Label>Email Address</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Email Address</Form.Label>
                     <Form.Control
                         type='email'
                         placeholder='Enter Email'
@@ -55,7 +55,7 @@ function LoginScreen({ history }) {
 
 
                 <Form.Group controlId='password'>
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Password</Form.Label>
                     <Form.Control
                         type='password'
                         placeholder='Enter Password'

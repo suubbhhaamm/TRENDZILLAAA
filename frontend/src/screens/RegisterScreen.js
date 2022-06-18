@@ -51,7 +51,7 @@ function RegisterScreen() {
             <Form onSubmit={submitHandler}>
 
                 <Form.Group controlId='name'>
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Name</Form.Label>
                     <Form.Control
                         required
                         type='name'
@@ -63,7 +63,7 @@ function RegisterScreen() {
                 </Form.Group>
 
                 <Form.Group controlId='email'>
-                    <Form.Label>Email Address</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Email Address</Form.Label>
                     <Form.Control
                         required
                         type='email'
@@ -75,7 +75,7 @@ function RegisterScreen() {
                 </Form.Group>
 
                 <Form.Group controlId='password'>
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Password</Form.Label>
                     <Form.Control
                         required
                         type='password'
@@ -87,7 +87,7 @@ function RegisterScreen() {
                 </Form.Group>
 
                 <Form.Group controlId='passwordConfirm'>
-                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Label style={{color: "#250166",fontFamily: "cursive"}}>Confirm Password</Form.Label>
                     <Form.Control
                         required
                         type='password'
@@ -98,7 +98,7 @@ function RegisterScreen() {
                     </Form.Control>
                 </Form.Group>
 
-                <Button type='submit' variant='primary'>
+                <Button type='submit' variant='primary' style={{marginTop:"10px"}}>
                     Register
                 </Button>
 
