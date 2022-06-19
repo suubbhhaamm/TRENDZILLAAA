@@ -132,10 +132,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'proshop',
-        'USER': 'subhu11',
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST':'localhost',
+        'NAME': 'trendzilla_db',
+        'USER': 'yashika06',
+        # 'PASSWORD': os.environ.get('DB_PASS'),
+        'PASSWORD': 'studentpostgres123',
+        'HOST':'db-instance.cltrcjaspfh8.ap-south-1.rds.amazonaws.com',
         'PORT':'5432' 
     }
 }
