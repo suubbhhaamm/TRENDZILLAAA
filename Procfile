@@ -1,1 +1,1 @@
-web: gunicorn backend.wsgi --max-requests 1200
+web: gunicorn backend.wsgi --log-file -
