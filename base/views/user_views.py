@@ -10,6 +10,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.contrib.auth.hashers import make_password
 from rest_framework import status
+import base.views.product_views as products
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -19,6 +20,8 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         serializer = UserSerializerWithToken(self.user).data
         for k, v in serializer.items():
             data[k] = v
+
+        products.switch_User()
 
         return data
 
@@ -61,13 +64,13 @@ def updateUserProfile(request):
 
     user.save()
 
+
     return Response(serializer.data)
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getUserProfile(request):
-    user = request.user
     serializer = UserSerializer(user, many=False)
     return Response(serializer.data)
 
