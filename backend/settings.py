@@ -12,10 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from datetime import timedelta
 from pathlib import Path
-import dj_database_url
-
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-    DATABASES['default'] = dj_database_url.parse('postgres://yashika06:studentpostgres123@db-instance.cltrcjaspfh8.ap-south-1.rds.amazonaws.com:5432/trendzilla_db', conn_max_age=600)
+#  DATABASES['default'] = dj_database_url.parse('postgres://yashika06:studentpostgres123@db-instance.cltrcjaspfh8.ap-south-1.rds.amazonaws.com:5432/trendzilla_db', conn_max_age=600)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
