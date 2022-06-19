@@ -298,7 +298,7 @@ def getTopProducts(request):
                 remaing_products.remove(product)
 
             products  = product1 + remaing_products
-            products = products[0:6]
+            products = products[0:8]
 
         if len(category) == 2:
             product1 = list(Product.objects.filter(
@@ -316,7 +316,7 @@ def getTopProducts(request):
                 remaing_products.remove(product)
 
             products  = product1 + product2 + remaing_products
-            products = products[0:6]
+            products = products[0:8]
 
 
 
@@ -343,7 +343,7 @@ def getTopProducts(request):
             
 
             products  = product1 + product2 + product3 + remaing_products
-            products = products[0:6]
+            products = products[0:8]
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 

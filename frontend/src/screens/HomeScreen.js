@@ -59,7 +59,7 @@ function HomeScreen() {
               </div>
         }
 
-        {/* {!keyword && pages && <RecommendProduct />} */}
+        
 
     </div>
   )

@@ -5,7 +5,9 @@ import { Row, Col, Image, ListGroup, Button, Card, Form } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { listProductDetails, createProductReview } from '../actions/productActions'
+import Product from '../components/Product'
+import Paginate from '../components/Paginate'
+import { listProductDetails, createProductReview, listTopProducts } from '../actions/productActions'
 import {PRODUCT_CREATE_REVIEW_RESET} from '../constants/productConstants'
 function ProductScreen() {
 
@@ -19,6 +21,9 @@ function ProductScreen() {
     const dispatch = useDispatch();
     const productDetails = useSelector(state => state.productDetails)
     const { loading, error, product} = productDetails
+
+    const productTopRated = useSelector(state => state.productTopRated)
+    const { error1, loading1, products } = productTopRated
 
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
@@ -38,6 +43,7 @@ function ProductScreen() {
         }
 
         dispatch(listProductDetails(id))
+        dispatch(listTopProducts())
 
     }, [dispatch, id, successProductReview])
 
@@ -250,8 +256,25 @@ function ProductScreen() {
 
             }
 
+            <h1 style={{marginTop: "20px",fontFamily: "cursive"}}>Recommended For You</h1>
+            {loading1 ? <Loader />
+            : error1 ? <Message variant='danger'>{error1}</Message>
+                :
+                <div>
+                    <Row>
+                    {products.map(product => (
+                        <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                        <Product product={product} />
+                        </Col>
+                    ))}
+                    </Row>
+
+                </div>
+            }
+
 
         </div >
+
     )
 }
 
