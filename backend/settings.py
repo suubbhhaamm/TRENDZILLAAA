@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-09qv4*f%q3on!5c+h0ede6n^hmm3y0v2l8a-nbwgjh3zx=@@=2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','trendzilla.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','trendzilla.herokuapp.com','trendzillafashionhub.herokuapp.com']
 
 
 # Application definition
