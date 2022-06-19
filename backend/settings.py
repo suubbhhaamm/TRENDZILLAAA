@@ -134,8 +134,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'trendzilla_db',
         'USER': 'yashika06',
-        # 'PASSWORD': os.environ.get('DB_PASS'),
-        'PASSWORD': 'studentpostgres123',
+        'PASSWORD': os.environ.get('DB_PASS'),
         'HOST':'db-instance.cltrcjaspfh8.ap-south-1.rds.amazonaws.com',
         'PORT':'5432' 
     }
